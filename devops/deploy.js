@@ -13,9 +13,9 @@ module.exports = entry;
 // where the UI is being built
 const BUILD_DIR = 'dist';
 // where should prod deploy to
-const BUCKET_NAME_PROD = 'enpfeff.com';
+const BUCKET_NAME_PROD = 'c3Software.io';
 // where should dev deploy to
-const BUCKET_NAME_DEV = 'enpfeff.com';
+const BUCKET_NAME_DEV = 'c3software.io';
 // output crap
 const PRETTY_PRINT_SPACER = '\n\t*  ';
 // mime types map
