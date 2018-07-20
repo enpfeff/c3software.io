@@ -9,7 +9,7 @@ const store = configureStore();
 
 render(
     <AppContainer>
-    <Root store={store} history={history}/>
+        <Root store={store} history={history}/>
     </AppContainer>,
     document.getElementById('app')
 );
@@ -19,10 +19,10 @@ if (module.hot) {
     module.hot.accept('./components/Root', () => {
         const NewRoot = require('./components/Root').default;
         render(
-        <AppContainer>
-        <NewRoot store={store} history={history} />
-        </AppContainer>,
-        document.getElementById('app')
-    );
+            <AppContainer>
+                <NewRoot store={store} history={history} />
+            </AppContainer>,
+            document.getElementById('app')
+        );
     });
 }

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { ConnectedRouter } from 'react-router-redux';
+import { Route, Switch } from 'react-router';
 import { Provider } from 'react-redux';
 import PropTypes from 'prop-types';
-import App from './App';
+import {CssBaseline} from '@material-ui/core';
+import routes from '../views/routes'
 
 export default class Root extends Component {
     render() {
@@ -10,9 +12,16 @@ export default class Root extends Component {
 
         return (
             <Provider store={store}>
-                <ConnectedRouter history={history}>
-                    <App />
-                </ConnectedRouter>
+                <React.Fragment>
+                    <CssBaseline/>
+                    <ConnectedRouter history={history}>
+                        <div>
+                            <Switch>
+                                {routes.map((prop, key) => (<Route path={prop.path} key={key} component={prop.component} />))}
+                            </Switch>
+                        </div>
+                    </ConnectedRouter>
+                </React.Fragment>
             </Provider>
         );
     }
