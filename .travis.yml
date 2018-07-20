@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+- '8'
+before_install:
+install:
+- cd ./devops && ./install.sh
+cache:
+  directories:
+  - devops/node_modules
+  - ui/node_modules
+script:
+  - cd ./devops && ./build.sh
+  - cd ./devops && ./deploy.sh
