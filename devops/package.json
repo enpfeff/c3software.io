@@ -1,0 +1,13 @@
+{
+  "name": "c3Software-devops",
+  "version": "0.1.0",
+  "description": "This is the repo for c3softwares devops code",
+  "engines": {
+    "npm": ">=3"
+  },
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

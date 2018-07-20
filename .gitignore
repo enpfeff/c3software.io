@@ -8,6 +8,7 @@ yarn-error.log*
 
 .idea
 .DS_Store
+ui/dist
 
 # Runtime data
 pids
