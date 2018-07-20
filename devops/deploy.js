@@ -13,7 +13,7 @@ module.exports = entry;
 // where the UI is being built
 const BUILD_DIR = 'dist';
 // where should prod deploy to
-const BUCKET_NAME_PROD = 'c3Software.io';
+const BUCKET_NAME_PROD = 'c3software.io';
 // where should dev deploy to
 const BUCKET_NAME_DEV = 'c3software.io';
 // output crap
@@ -50,7 +50,8 @@ function entry() {
 
 function loadEnvironment() {
     // used in development so i dont share aws secrets
-    const ENV_FILE = path.resolve(path.join(__dirname, '..', 'env.js'));
+    const envPath = path.join(__dirname, '..', 'env.js');
+    const ENV_FILE = path.resolve(envPath);
 
     // not in development env
     if(!fs.existsSync(ENV_FILE)) return;

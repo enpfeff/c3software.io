@@ -8,6 +8,10 @@
   "scripts": {},
   "author": "",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.278.1",
+    "bluebird": "^3.5.1",
+    "lodash": "^4.17.10"
+  },
   "devDependencies": {}
 }

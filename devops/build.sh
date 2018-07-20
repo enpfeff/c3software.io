@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-cd ../ui
+cd ./ui
 npm run build

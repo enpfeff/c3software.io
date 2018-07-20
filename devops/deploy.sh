@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-node ./deploy.js
+node ./devops/deploy.js
