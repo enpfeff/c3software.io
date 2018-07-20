@@ -45,7 +45,12 @@ function entry() {
 
     s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
-    return getAndUploadDistribution('./ui');
+    try {
+        getAndUploadDistribution('./ui')
+    } catch(e) {
+        console.log(e);
+        process.exit(1);
+    }
 }
 
 function loadEnvironment() {
