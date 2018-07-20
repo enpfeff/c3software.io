@@ -4,10 +4,11 @@ node_js:
 before_install:
 install:
 - cd ./devops && ./install.sh
+- cd ..
 cache:
   directories:
   - devops/node_modules
   - ui/node_modules
 script:
-  - cd ./devops && ./build.sh
-  - cd ./devops && ./deploy.sh
+  - cd ./devops && ./build.sh && cd ..
+  - cd ./devops && ./deploy.sh && cd ..
