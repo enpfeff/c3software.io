@@ -54,7 +54,7 @@ function loadEnvironment() {
     const ENV_FILE = path.resolve(envPath);
 
     // not in development env
-    if(!fs.existsSync(ENV_FILE)) return;
+    if(!fs.existsSync(ENV_FILE)) return console.log('No Env file');
     console.log('Found Env file loading environment');
 
     const ENV = require(ENV_FILE);
