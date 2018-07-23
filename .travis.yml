@@ -36,6 +36,7 @@ matrix:
         secret_access_key:
           secure: $AWS_SECRET_ACCESS_KEY
         region: $AWS_REGION
+        file: ./build/libs/c3Software-*.war
         app: "c3Software.io"
         env: "c3softwareio-env"
         bucket_name: "elasticbeanstalk-us-east-1-112859411456"
