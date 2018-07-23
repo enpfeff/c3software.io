@@ -34,11 +34,12 @@ matrix:
         provider: elasticbeanstalk
         access_key_id: $AWS_ACCESS_KEY_ID
         secret_access_key:
-          secure: "$AWS_SECRET_ACCESS_KEY"
-        region: "$AWS_REGION"
+          secure: $AWS_SECRET_ACCESS_KEY
+        region: $AWS_REGION
         app: "c3Software.io"
         env: "c3softwareio-env"
         bucket_name: "elasticbeanstalk-us-east-1-112859411456"
+        skip_cleanup: true
         on:
           branch: master
-skip_cleanup: true
+
