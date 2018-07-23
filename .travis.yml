@@ -17,16 +17,15 @@ matrix:
     - language: java
       jdk: oraclejdk8
       before_cache:
-        - rm -f  $HOME/server/.gradle/caches/modules-2/modules-2.lock
-        - rm -fr $HOME/server/.gradle/caches/*/plugin-resolution/
+        - rm -f  ./server/.gradle/caches/modules-2/modules-2.lock
+        - rm -fr ./server/.gradle/caches/*/plugin-resolution/
       cache:
         directories:
-          - $HOME/server/.gradle/caches/
-          - $HOME/server/.gradle/wrapper/
+          - ./server/.gradle/caches/
+          - ./server/.gradle/wrapper/
       before_install:
-        - echo $HOME
-        - cd $HOME/server
+        - cd server
 #      install:
       before_script:
-        - cd $HOME/server
+        - cd server
 #      script:
