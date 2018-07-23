@@ -1,7 +1,7 @@
 import Landing from './Landing/Landing';
 
 const routes = [
-    {path: '/', name: 'Landing', component: Landing}
+    {path: '/', name: 'Home', component: Landing}
 ];
 
 export default routes;

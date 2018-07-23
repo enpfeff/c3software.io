@@ -9,6 +9,7 @@ import Parallax from '../../components/Parallax/Parallax.jsx';
 import Footer from '../../components/Footer/Footer';
 
 import landingPageStyle from "./landingStyle.jsx";
+// import routes from '../routes';
 
 class Landing extends React.Component {
     render() {
@@ -18,7 +19,6 @@ class Landing extends React.Component {
             <div>
                 <Header
                     color="transparent"
-                    routes={[]}
                     brand="C3 Software"
                     fixed
                     changeColorOnScroll={{
