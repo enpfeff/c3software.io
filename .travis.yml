@@ -12,7 +12,7 @@ matrix:
         - ui/node_modules
       script:
         - ./devops/build.sh
-      deploy:
+      after_deploy:
         - ./devops/deploy.sh
 
     - language: java
