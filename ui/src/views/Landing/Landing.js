@@ -6,6 +6,7 @@ import Header from "../../components/Header/Header.js";
 import GridContainer from '../../components/Grid/GridContainer.jsx';
 import GridItem from '../../components/Grid/GridItem.jsx';
 import Parallax from '../../components/Parallax/Parallax.jsx';
+import Footer from '../../components/Footer/Footer';
 
 import landingPageStyle from "./landingStyle.jsx";
 
@@ -41,6 +42,7 @@ class Landing extends React.Component {
 
                     </div>
                 </div>
+                <Footer/>
             </div>
         )
     }
