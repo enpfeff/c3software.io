@@ -1,13 +1,32 @@
-language: node_js
-node_js:
-- '8'
-before_install:
-install:
-- ./devops/install.sh
-cache:
-  directories:
-  - devops/node_modules
-  - ui/node_modules
-script:
-  - ./devops/build.sh
-  - ./devops/deploy.sh
+matrix:
+  include:
+    - language: node_js
+      node_js:
+      - '8'
+      before_install:
+      install:
+      - ./devops/install.sh
+      cache:
+        directories:
+        - devops/node_modules
+        - ui/node_modules
+      script:
+        - ./devops/build.sh
+        - ./devops/deploy.sh
+
+    - language: java
+      jdk: oraclejdk8
+      before_cache:
+        - rm -f  $HOME/server/.gradle/caches/modules-2/modules-2.lock
+        - rm -fr $HOME/server/.gradle/caches/*/plugin-resolution/
+      cache:
+        directories:
+          - $HOME/server/.gradle/caches/
+          - $HOME/server/.gradle/wrapper/
+
+      before_install:
+        - cd $HOME/server
+#      install:
+      before_script:
+        - cd $HOME/server
+#      script:
