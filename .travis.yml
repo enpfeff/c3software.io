@@ -27,5 +27,4 @@ matrix:
         - cd server
 #      install:
       before_script:
-        - cd server
 #      script:
