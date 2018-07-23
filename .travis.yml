@@ -28,4 +28,17 @@ matrix:
         - cd server
 #      install:
       before_script:
-#      script:
+      script:
+        - ./gradlew build
+      deploy:
+        provider: elasticbeanstalk
+        access_key_id: $AWS_ACCESS_KEY_ID
+        secret_access_key:
+          secure: "$AWS_SECRET_ACCESS_KEY"
+        region: "$AWS_REGION"
+        app: "c3Software.io"
+        env: "c3softwareio-env"
+        bucket_name: "elasticbeanstalk-us-east-1-112859411456"
+        on:
+          branch: master
+skip_cleanup: true
