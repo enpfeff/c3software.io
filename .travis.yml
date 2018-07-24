@@ -26,6 +26,8 @@ matrix:
           - ./server/.gradle/caches/
           - ./server/.gradle/wrapper/
       before_install:
+        - pip install --user awscli
+        - export PATH=$PATH:$HOME/.local/bin
         - cd server
       before_script:
       script:
