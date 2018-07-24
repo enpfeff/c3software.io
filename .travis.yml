@@ -12,11 +12,12 @@ matrix:
         - ui/node_modules
       script:
         - ./devops/build.sh
-      after_deploy:
+      after_success:
         - ./devops/deploy.sh
 
     - language: java
       jdk: oraclejdk8
+      sudo: false
       before_cache:
         - rm -f  ./server/.gradle/caches/modules-2/modules-2.lock
         - rm -fr ./server/.gradle/caches/*/plugin-resolution/
@@ -26,21 +27,9 @@ matrix:
           - ./server/.gradle/wrapper/
       before_install:
         - cd server
-#      install:
       before_script:
       script:
-        - ./gradlew build
-      deploy:
-        provider: elasticbeanstalk
-        access_key_id: $AWS_ACCESS_KEY_ID
-        secret_access_key:
-          secure: $AWS_SECRET_ACCESS_KEY
-        region: $AWS_REGION
-        file: ./build/libs/c3Software-*.war
-        app: "c3Software.io"
-        env: "c3softwareio-env"
-        bucket_name: "elasticbeanstalk-us-east-1-112859411456"
-        skip_cleanup: true
-        on:
-          branch: master
+        - ./gradlew clean build war
+      after_success:
+        - ../devops/eb-deploy.sh
 
