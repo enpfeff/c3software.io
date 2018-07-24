@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 # Usage:
 #
 # Set AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY env variables.
